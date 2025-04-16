@@ -8,30 +8,57 @@ import { Icon } from "astro-icon/components";
 <header
 	id="main-header"
 	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-16 w-full bg-bgColor md:bg-transparent overflow-hidden"
->	
+>
 	<!-- Background 
 			TODO: This approach is not optimal and requires improvements. 
   			- Too many absolutely positioned elements can affect performance. 
-  		-->	
-	<div class="md:hidden absolute top-0 left-1/2 -ml-[50vw] w-screen min-h-screen pointer-events-none blur-2xl">
-		<div class="absolute top-[-90%] right-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-		<div class="absolute top-[-90%] left-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-		<div class="absolute top-[-85%] right-[25%] w-[55%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-		<div class="absolute top-[-85%] left-[25%] w-[55%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-		<div class="absolute top-[-75%] left-[-25%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-5"></div>
-		<div class="absolute top-[-75%] right-[-25%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-5"></div>
-		<div class="absolute top-[-85%] left-[-30%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
-		<div class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
+  		-->
+	<div
+		class="md:hidden absolute top-0 left-1/2 -ml-[50vw] w-screen min-h-screen pointer-events-none blur-2xl"
+	>
+		<div
+			class="absolute top-[-90%] right-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-90%] left-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-85%] right-[25%] w-[55%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-85%] left-[25%] w-[55%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-75%] left-[-25%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-75%] right-[-25%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-85%] left-[-30%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-5"
+		>
+		</div>
+		<div
+			class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"
+		>
+		</div>
 	</div>
-	
+
 	<div class="w-full justify-between sm:flex-col">
 		<div class="flex items-center gap-x-2">
+			<!-- LOGO Y TEXTO DEL HEADER -->
 			<a
 				aria-label={siteConfig.title}
 				aria-current={Astro.url.pathname === "/" ? "page" : false}
 				class="group flex h-8 items-center hover:filter-none sm:relative"
 				href="/"
-			>	
+			>
 				<!-- Logo -->
 				<!--
 				<div class="pt-1.5">
@@ -40,21 +67,43 @@ import { Icon } from "astro-icon/components";
 					</svg>
 				</div>
 				-->
+				<!-- LOGO -->
 				<div title={siteConfig.title}>
-					<svg class="inline-block size-8 fill-current text-accent-base dark:text-accent-two drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.35)]">
-						<use href="/brand.svg#citrus"></use>
+					<svg
+						class="inline-block size-8 fill-current text-accent-base dark:text-accent-two drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.35)]"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						width="24"
+						height="24"
+						stroke-width="2"
+					>
+						<path
+							d="M6.081 20c1.612 0 2.919 -1.335 2.919 -2.98v-9.763c0 -.694 -.552 -1.257 -1.232 -1.257c-.205 0 -.405 .052 -.584 .15l-.13 .083c-1.46 1.059 -2.432 2.647 -3.404 5.824c-.42 1.37 -.636 2.962 -.648 4.775c-.012 1.675 1.261 3.054 2.877 3.161l.203 .007z"
+						></path>
+						<path
+							d="M17.92 20c-1.613 0 -2.92 -1.335 -2.92 -2.98v-9.763c0 -.694 .552 -1.257 1.233 -1.257c.204 0 .405 .052 .584 .15l.13 .083c1.46 1.059 2.432 2.647 3.405 5.824c.42 1.37 .636 2.962 .648 4.775c.012 1.675 -1.261 3.054 -2.878 3.161l-.202 .007z"
+						></path>
+						<path d="M9 12a3 3 0 0 0 3 -3a3 3 0 0 0 3 3"></path>
+						<path d="M12 4v5"></path>
 					</svg>
 				</div>
-				
-				<strong class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two hidden xs:block z-10 mb-0.5 ms-2 text-2xl group-hover:text-accent-one">
+
+				<!-- TEXTO -->
+				<strong
+					class="'max-[320px]:hidden' bg-clip-text text-transparent bg-gradient-to-r from-accent-one to-accent-two hidden xs:block z-10 mb-0.5 ms-2 text-2xl group-hover:text-accent-one"
+				>
 					{siteConfig.title}
 				</strong>
 			</a>
+			<!-- NAV PARA PANTALLAS GRANDES (CREO) -->
 			<nav
 				aria-label="Main menu"
 				class="top-20 text-sm mx-auto ml-4 ml-auto hidden flex-col items-end justify-center gap-x-4 rounded-md bg-bgColor font-medium text-accent-two shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none md:flex"
 				id="main-navigation-menu"
-			>	
+			>
 				<!--				
 				<a
 					aria-current={Astro.url.pathname === "/" ? "page" : false}
@@ -81,10 +130,16 @@ import { Icon } from "astro-icon/components";
 				-->
 
 				<!-- Ссылки меню -->
+				 
+				<!-- LINKS DE NAVEGACIÓN -->
 				{
 					menuLinks.map((link) => (
 						<a
-							aria-current={Astro.url.pathname === link.path ? "page" : false}
+							aria-current={
+								Astro.url.pathname === link.path
+									? "page"
+									: false
+							}
 							class="underline-offset-2 hover:underline"
 							data-astro-prefetch
 							href={link.path}
@@ -93,15 +148,17 @@ import { Icon } from "astro-icon/components";
 						</a>
 					))
 				}
-				
-				<a
+
+				<!-- LINK EXTRA DE `DOCS`, esta comentado porque no creo usarlo -->
+				 <!-- <a
 					class="flex h-8 items-center rounded-lg bg-accent-base/5 px-4 text-accent-base underline-offset-2 hover:bg-accent-base/10"
 					data-astro-prefetch
 					href="/posts/citrus-docs/intro/"
 				>
 					Docs
-				</a>
+				</a> -->
 				
+
 				<!-- Dropdown menu button for large screens. Needs improvement. -->
 				<!--
 				<button
@@ -116,7 +173,7 @@ import { Icon } from "astro-icon/components";
 				</button>
 				-->
 			</nav>
-			
+
 			<!-- Dropdown menu for large screens. Needs improvement. -->
 			<!--
 			<div id="menu" class="absolute left-0 right-0 w-fit ml-auto top-16 z-10 hidden" aria-hidden="true">
@@ -153,13 +210,18 @@ import { Icon } from "astro-icon/components";
 			</div>
 			-->
 
+			<!-- Botón de búsqueda y tema -->
 			<div class="ml-auto w-fit">
-				<div id="buttons-panel" class="top-4 md:top-8 -ml-[4.5rem] flex space-x-2">
+				<div
+					id="buttons-panel"
+					class="top-4 md:top-8 -ml-[4.5rem] flex space-x-2"
+				>
 					<Search />
 					<ThemeToggle />
 				</div>
-			</div>	
-			
+			</div>
+
+			<!-- Botón de menú móvil -->
 			<mobile-button
 				aria-expanded="false"
 				aria-haspopup="menu"
@@ -182,7 +244,7 @@ import { Icon } from "astro-icon/components";
 					focusable="false"
 					name="hugeicons:cancel-01"
 				/>
-			</mobile-button>
+			</mobile-bu	tton>
 		</div>
 	</div>
 </header>
@@ -195,22 +257,48 @@ import { Icon } from "astro-icon/components";
 		<!-- Background 
 			TODO: This approach is not optimal and requires improvements. 
   			- Too many absolutely positioned elements can affect performance. 
-  		-->		
-		<div class="fixed top-0 left-1/2 -ml-[50vw] w-screen pointer-events-none min-h-screen overflow-x-hidden overflow-y-visible blur-2xl">
-				<!--
+  		-->
+		<div
+			class="fixed top-0 left-1/2 -ml-[50vw] w-screen pointer-events-none min-h-screen overflow-x-hidden overflow-y-visible blur-2xl"
+		>
+			<!--
 				<div class="fixed blur-xl top-0 left-0 w-full h-16 md:h-20 bg-gradient-to-b from-indigo-300 via-purple-300 to-transparent opacity-10 dark:opacity-5"></div>
 				-->
-				<div class="absolute top-[-90%] right-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-				<div class="absolute top-[-90%] left-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-				<div class="absolute top-[-85%] right-[25%] w-[55%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-				<div class="absolute top-[-85%] left-[25%] w-[55%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-40 dark:opacity-5"></div>
-				<div class="absolute top-[-75%] left-[-25%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-5"></div>
-				<div class="absolute top-[-75%] right-[-25%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-5"></div>
-				<div class="absolute top-[-85%] left-[-30%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
-				<div class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
-		
-		</div>	
-		
+			<div
+				class="absolute top-[-90%] right-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-90%] left-[25%] w-[75%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-85%] right-[25%] w-[55%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-85%] left-[25%] w-[55%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-40 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-75%] left-[-25%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-75%] right-[-25%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-85%] left-[-30%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-5"
+			>
+			</div>
+			<div
+				class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"
+			>
+			</div>
+		</div>
+
+		<!-- Esto es para el nav en celulares, despues de desplegar el menu hamburguesa -->
 		<nav
 			aria-label="Mobile navigation menu"
 			class="text-lg absolute inset-0 flex flex-col items-center justify-center gap-y-4 text-center font-medium text-accent-two"
@@ -220,7 +308,9 @@ import { Icon } from "astro-icon/components";
 			{
 				menuLinks.map((link) => (
 					<a
-						aria-current={Astro.url.pathname === link.path ? "page" : false}
+						aria-current={
+							Astro.url.pathname === link.path ? "page" : false
+						}
 						class="underline-offset-2 hover:underline"
 						data-astro-prefetch
 						href={link.path}
@@ -229,27 +319,37 @@ import { Icon } from "astro-icon/components";
 					</a>
 				))
 			}
-			<a
+			<!-- Comento el Docs porque no lo usare -->
+			<!-- <a
 				class="flex h-8 items-center rounded-lg bg-accent-base/5 px-4 text-accent-base underline-offset-2 hover:bg-accent-base/10"
 				data-astro-prefetch
 				href="/series/citrus-docs"
 			>
 				Docs
-			</a>
+			</a> -->
 		</nav>
 	</div>
 </div>
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		const toggleNavMenuMobileButton = document.getElementById("toggle-nav-menu-mobile");
+		const toggleNavMenuMobileButton = document.getElementById(
+			"toggle-nav-menu-mobile",
+		);
 		const openMenuIcon = document.getElementById("open-nav-menu-icon");
 		const closeMenuIcon = document.getElementById("close-nav-menu-icon");
 		const drawer = document.getElementById("drawer");
 
 		// Проверяем существование элементов
-		if (!toggleNavMenuMobileButton || !openMenuIcon || !closeMenuIcon || !drawer) {
-			console.error("One or more required elements are missing in the DOM.");
+		if (
+			!toggleNavMenuMobileButton ||
+			!openMenuIcon ||
+			!closeMenuIcon ||
+			!drawer
+		) {
+			console.error(
+				"One or more required elements are missing in the DOM.",
+			);
 			return;
 		}
 
@@ -260,7 +360,9 @@ import { Icon } from "astro-icon/components";
 		}
 
 		toggleNavMenuMobileButton.addEventListener("click", () => {
-			const isOpen = toggleNavMenuMobileButton.getAttribute("aria-expanded") === "true";
+			const isOpen =
+				toggleNavMenuMobileButton.getAttribute("aria-expanded") ===
+				"true";
 
 			if (isOpen) {
 				// Закрываем меню
@@ -289,10 +391,10 @@ import { Icon } from "astro-icon/components";
 			}
 
 			// Обновляем состояние кнопки
-			toggleNavMenuMobileButton.setAttribute("aria-expanded", (!isOpen).toString());
+			toggleNavMenuMobileButton.setAttribute(
+				"aria-expanded",
+				(!isOpen).toString(),
+			);
 		});
 	});
 </script>
-
-
-
