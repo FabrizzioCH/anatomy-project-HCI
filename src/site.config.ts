@@ -26,11 +26,11 @@ export const siteConfig: SiteConfig = {
 export const menuLinks: { path: string; title: string }[] = [
 	{
 		path: "/",
-		title: "Home",
+		title: "Inicio",
 	},
 	{
 		path: "/about/",
-		title: "About",
+		title: "Acerca de",
 	},
 	{
 		path: "/posts/",
@@ -38,6 +38,6 @@ export const menuLinks: { path: string; title: string }[] = [
 	},
 	{
 		path: "/notes/",
-		title: "Notes",
+		title: "Notas",
 	},
 ];
