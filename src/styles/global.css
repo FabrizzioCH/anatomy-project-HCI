@@ -80,49 +80,44 @@
 	:root[data-theme="light"] {
 		color-scheme: light;
 
-		/* Для того чтобы текст имел оттенок фона --fg-hue: var(--hue) и --bg-hue: var(--hue) */
-		/* Для того чтобы текст имел оттенок фона --fg-saturation: var(--saturation) и --bg-saturation: var(--saturation) */
+		/*** COLORES PRINCIPALES (Base, fondo, acentos, texto) ***/
+		/* Matiz base del tema */
+		--hue: 210deg; /* Matiz base general de los elementos del tema (azul frío) */
+		--saturation: 15%; /* Saturación base general de los elementos del tema, 0% - sin matiz de color */
 		
-		/*** ОСНОВНЫЕ ЦВЕТА (Базовый, фон, акценты, текст) ***/
-		/* Базовый цвет-оттенок темы */
-		--hue: 200deg; /* Общий базовый цвет-оттенок элементов темы */
-		--saturation: 10%; /* Общая базовая насыщенность элементов темы, 0% - нет оттенка цвета */
-		
-		/* Фон (background) */
-		--bg-hue: var(--hue); /* Цвет-оттенок фона */
-		--bg-saturation: var(--saturation); /* Насыщенность оттенка фона и некоторых др. элементов, 0% - нет оттенка */
-		--bg-brightness: 96%; /* Ярксть фона, 100% - абсолюнто белый */
+		/* Fondo (background) */
+		--bg-hue: var(--hue); /* Matiz del fondo */
+		--bg-saturation: var(--saturation); /* Saturación del matiz del fondo y algunos otros elementos, 0% - sin matiz */
+		--bg-brightness: 95%; /* Brillo del fondo, 100% - completamente blanco */
 
-		/* Акценты */
-		--theme-accent-base: var(--bg-hue) 53% 27%; /* Основной акцентный цвет */
-		--theme-accent-one: var(--bg-hue) 53% 27%; /* Первый дополнительный акцентный цвет */
-		--theme-accent-two: 351deg 66% 48%; /* Второй дополнительный акцентный цвет */
+		/* Acentos */
+		--theme-accent-base: var(--bg-hue) 25% 40%; /* Color de acento principal */
+		--theme-accent-one: var(--bg-hue) 30% 50%; /* Primer color de acento adicional */
+		--theme-accent-two: 220deg 20% 60%; /* Segundo color de acento adicional (gris azulado) */
 		
-		/* Вариант */ /* --theme-accent-two: 344deg 63% 45%; */
-		
-		/* Текст (foreground, цвет-яркость текста рассчитывается ниже на базе --theme-fg) */
-		--fg-hue: var(--hue); /* Общий цвет-оттенок для рассчета градаций цвета */
-		--fg-saturation: var(--saturation); /* Общая насыщенность для рассчета градаций цвета с оттенком, 0% - нет оттенка */
-		--fg-brightness: 9%; /* Яркость для рассчета градаций цвета с оттенком, 0% - начиная от абсолютно черного */
-		--theme-text: var(--theme-color-500); /* Цвет-яркость текста уже с адаптацией под цвет фона */ 
+		/* Texto (foreground, el brillo del texto se calcula a continuación basado en --theme-fg) */
+		--fg-hue: var(--hue); /* Matiz general para calcular gradaciones de color */
+		--fg-saturation: var(--saturation); /* Saturación general para calcular gradaciones de color con matiz, 0% - sin matiz */
+		--fg-brightness: 10%; /* Brillo para calcular gradaciones de color con matiz, 0% - completamente negro */
+		--theme-text: var(--theme-color-500); /* Brillo del texto ya adaptado al color del fondo */ 
 
-		/*** ВТОРОСТЕПЕННЫЕ ЦВЕТА (Внешние ссылки, нейтральный акцент, цитаты) ***/
-		--theme-link: var(--hue) 97% 31%; /* Цвет внешних ссылок */
-		--theme-accent: var(--theme-color-600); /* Нейтральный акцент, рассчитывается ниже на базе --theme-fg */
-		--theme-quote: var(--theme-text); /* Цвет цитат */
+		/*** COLORES SECUNDARIOS (Enlaces externos, acento neutral, citas) ***/
+		--theme-link: var(--hue) 40% 50%; /* Color de enlaces externos (azul frío) */
+		--theme-accent: var(--theme-color-600); /* Acento neutral, calculado a continuación basado en --theme-fg */
+		--theme-quote: var(--theme-text); /* Color de las citas */
 		
-		/*** ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА ***/
+		/*** COLORES ADICIONALES ***/
 		--theme-lightest: var(--theme-color-350);
 		--theme-lighter: var(--theme-color-400);
 		--theme-light: var(--theme-color-450);
 		
-		/*** СПЕЦИАЛЬНЫЕ ДЛЯ КАЖДОЙ ТЕМЫ ЦВЕТА ***/
-		--theme-special-lightest: hsl(var(--hue), var(--saturation), 100%);
-		--theme-special-lighter: hsl(var(--hue), var(--saturation), 98%);
+		/*** COLORES ESPECIALES PARA CADA TEMA ***/
+		--theme-special-lightest: hsl(var(--hue), var(--saturation), 98%);
+		--theme-special-lighter: hsl(var(--hue), var(--saturation), 96%);
 		--theme-special-light: hsl(var(--theme-bg));
 		--theme-special: var(--theme-color-75);
 		
-		/* Подсветка синтаксиса rehype-pretty-code */
+		/* Resaltado de sintaxis rehype-pretty-code */
 		pre code span {
 			color: var(--shiki-light) !important;
 			font-style: var(--shiki-light-font-style) !important;
@@ -134,57 +129,44 @@
 	:root[data-theme="dark"] {
 		color-scheme: dark;
 
-		/* Для того чтобы текст имел оттенок фона --fg-hue: var(--hue) и --bg-hue: var(--hue) */
-		/* Для того чтобы текст имел оттенок фона --fg-saturation: var(--saturation) и --bg-saturation: var(--saturation) */
-		
-		/* --theme-bg: 200deg 93% 10%; /* DeepBlue */
-		/* --theme-bg: 190deg 86% 8%; /* DeepGreen */
-		/* --theme-bg: 237deg 22% 20%; */
-		/* --theme-accent-one: 355deg 61% 88%; /* LightRose */
-		/* --theme-accent-two: 200deg 61% 71%; /* LightBlue */
+		/*** COLORES PRINCIPALES (Base, fondo, acentos, texto) ***/
+		/* Matiz base del tema */
+		--hue: 220deg; /* Matiz base general de los elementos del tema (azul frío) */
+		--saturation: 20%; /* Saturación base general de los elementos del tema, 0% - sin matiz de color */
 
-		/*** ОСНОВНЫЕ ЦВЕТА (Базовый, фон, акценты, текст) ***/
-		/* Базовый цвет-оттенок темы */
-		--hue: 200deg; /* Общий базовый цвет-оттенок элементов темы */
-		--saturation: 53%; /* Общая базовая насыщенность элементов темы, 0% - нет оттенка цвета */
+		/* Fondo (background) */
+		--bg-hue: var(--hue); /* Matiz del fondo */
+		--bg-saturation: var(--saturation); /* Saturación del matiz del fondo y algunos otros elementos, 0% - sin matiz */
+		--bg-brightness: 12%; /* Brillo del fondo, 0% - completamente negro */
 
-		/* Фон (background) */
-		--bg-hue: var(--hue); /* Цвет-оттенок фона */
-		--bg-saturation: var(--saturation); /* Насыщенность оттенка фона и некоторых др. элементов, 0% - нет оттенка */
-		--bg-brightness: 15%; /* Ярксть фона, 0% - черный */
-		/* Вариант 204deg 51% 14% */
-		/* Вариант 210deg 25% 15% */
+		/* Acentos */
+		--theme-accent-base: var(--hue) 25% 50%; /* Color de acento principal */
+		--theme-accent-one: var(--hue) 30% 60%; /* Primer color de acento adicional */
+		--theme-accent-two: 230deg 15% 70%; /* Segundo color de acento adicional (gris azulado) */
 
-		/* Акценты */
-		--theme-accent-base: var(--hue) 10% 85%; 
-		--theme-accent-one: 50deg 49% 80%; /* Первый дополнительный акцентный цвет */
-		--theme-accent-two: 50deg 72% 63%; /* 50deg 72% 63% */ /* Второй дополнительный акцентный цвет (был 45deg 80% 50%) */
-		/* --theme-accent-two: 0deg 75% 89%; */
-		/* --theme-accent-base: var(--hue) 97% 71%; */
+		/* Texto (foreground, el brillo del texto se calcula a continuación basado en --theme-fg) */
+		--fg-hue: var(--hue); /* Matiz general para calcular gradaciones de color */
+		--fg-saturation: var(--saturation); /* Saturación general para calcular gradaciones de color con matiz, 0% - sin matiz */
+		--fg-brightness: 90%; /* Brillo para calcular gradaciones de color con matiz, 100% - completamente blanco */
+		--theme-text: var(--theme-color-500); /* Brillo del texto ya adaptado al color del fondo */ 
 
-		/* Текст (foreground, цвет-яркость текста рассчитывается ниже на базе --theme-fg) */
-		--fg-hue: var(--hue); /* Общий цвет-оттенок для рассчета градаций цвета */
-		--fg-saturation: var(--saturation); /* Общая насыщенность для рассчета градаций цвета с оттенком, 0% - нет оттенка */
-		--fg-brightness: 98%; /* Яркость для рассчета градаций цвета с оттенком, 100% - начиная от абсолютно белого */
-		--theme-text: var(--theme-color-500); /* Цвет-яркость текста адаптированного под цвет фона */ 
+		/*** COLORES SECUNDARIOS (Enlaces externos, acento neutral, citas) ***/
+		--theme-link: var(--hue) 40% 65%; /* Color de enlaces externos (azul frío) */
+		--theme-accent: var(--theme-color-600); /* Acento neutral, calculado a continuación basado en --theme-fg */
+		--theme-quote: var(--theme-text); /* Color de las citas */
 
-		/*** ВТОРОСТЕПЕННЫЕ ЦВЕТА (Внкшние ссылки, нейтральный акцент, цитаты) ***/
-		--theme-link: var(--hue) 61% 71%; /* Цвет внешних ссылок */
-		--theme-accent: var(--theme-color-600); /* Нейтральный акцент относительно текста */
-		--theme-quote: var(--theme-text); /* Цвет цитат */
-
-		/*** ДОПОЛНИТЕЛЬНЫЕ ЦВЕТА ***/
+		/*** COLORES ADICIONALES ***/
 		--theme-lightest: var(--theme-color-350);
 		--theme-lighter: var(--theme-color-400);
 		--theme-light: var(--theme-color-450);
 
-		/*** СПЕЦИАЛЬНЫЕ ДЛЯ КАЖДОЙ ТЕМЫ ЦВЕТА (!отличающиеся настройки для разных тем) ***/
-		--theme-special-lightest: var(--theme-color-250);
-		--theme-special-lighter: var(--theme-color-200);
-		--theme-special-light: var(--theme-color-150);
-		--theme-special: hsl(var(--hue) var(--saturation) 0% / 0.150);
+		/*** COLORES ESPECIALES PARA CADA TEMA ***/
+		--theme-special-lightest: hsl(var(--hue), var(--saturation), 20%);
+		--theme-special-lighter: hsl(var(--hue), var(--saturation), 18%);
+		--theme-special-light: hsl(var(--hue), var(--saturation), 16%);
+		--theme-special: hsl(var(--hue), var(--saturation), 14%);
 
-		/* Подсветка синтаксиса */
+		/* Resaltado de sintaxis */
 		pre code span {
 			color: var(--shiki-dark) !important;
 			font-style: var(--shiki-dark-font-style) !important;
