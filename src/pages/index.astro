@@ -3,6 +3,9 @@ import PageLayout from "@/layouts/Base.astro";
 ---
 
 <PageLayout meta={{ title: "Inicio" }}>
+
+  <!-- Hero section -->
+  <!-- Background blur -->
   <section
     class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24"
   >
@@ -23,6 +26,11 @@ import PageLayout from "@/layouts/Base.astro";
 			</div> -->
       <div class="flex justify-center space-x-4 mt-4">
         <a
+          href="#"
+          class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two"
+        >
+          <span class="text-bgColor font-semibold"> ¡Comienza ahora! </span>
+
           href="./temario"
           class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two"
         >
@@ -30,6 +38,16 @@ import PageLayout from "@/layouts/Base.astro";
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- Sección de los temas que se abordan -->
+  <section
+    aria-label="Temas de anatomía humana"
+    class="'mt-[-100vh] pt-[100vh]'"
+  >
+    <h2 class="title mb-6 text-xl text-accent-two">
+      <a href="#">Temario</a>
+    </h2>
   </section>
 
   <!-- Posts Section, deshabilitada -->
