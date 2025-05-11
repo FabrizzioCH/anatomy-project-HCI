@@ -8,44 +8,52 @@ import { siteConfig } from "@/site.config";
 import type { SiteMeta } from "@/types";
 
 interface Props {
-	meta: SiteMeta;
+  meta: SiteMeta;
 }
 
 const {
-	meta: { articleDate, description = siteConfig.description, ogImage, title },
+  meta: { articleDate, description = siteConfig.description, ogImage, title },
 } = Astro.props;
 ---
 
 <html
-	class="overflow-x-hidden grid scroll-pt-20 scroll-smooth font-sans text-textColor text-xl md:text-base antialiased"
-	lang={siteConfig.lang}
+  class="overflow-x-hidden grid scroll-pt-20 scroll-smooth font-sans text-textColor text-xl md:text-base antialiased"
+  lang={siteConfig.lang}
 >
-	<head>
-		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
-	</head>
-	<body class="min-w-4xl relative m-auto min-h-screen w-full max-w-6xl grow bg-bgColor">
-		<ThemeProvider />
-		<SkipLink />
+  <head>
+    <BaseHead
+      articleDate={articleDate}
+      description={description}
+      ogImage={ogImage}
+      title={title}
+    />
+  </head>
+  <body
+    class="min-w-4xl relative m-auto min-h-screen w-full max-w-6xl grow bg-bgColor"
+  >
+    <ThemeProvider />
+    <SkipLink />
 
-		<!-- Background 
+    <!-- Background 
 			TODO: This approach is not optimal and requires improvements. 
   			- Too many absolutely positioned elements can affect performance. 
-  		-->	
-		
-	
-		<div class="relative flex min-h-screen w-full">
-			<!-- Sidebar for Docs Series -->
-			<slot name="sidebar" />
-			<!-- Main container for the page content -->
-			<div id="container" class="min-w-3xl relative m-auto max-w-4xl grow">
-				<div class="m-auto grid min-h-screen md:grid-rows-[auto_auto_1fr] px-4 md:px-8 md:pt-4">
-					<Header />
-					<main id="main" class="relative flex-grow mt-32 md:mt-[3.5rem]">
-						<slot />
-					</main>
-					<Footer />
-				</div>
-			</div>
-		</div>
-	</body>
+  		-->
+
+    <div class="relative flex min-h-screen w-full">
+      <!-- Sidebar for Docs Series -->
+      <slot name="sidebar" />
+      <!-- Main container for the page content -->
+      <div id="container" class="min-w-3xl relative m-auto max-w-4xl grow">
+        <div
+          class="m-auto grid min-h-screen md:grid-rows-[auto_auto_1fr] px-4 md:px-8 md:pt-4"
+        >
+          <Header />
+          <main id="main" class="relative flex-grow mt-32 md:mt-[3.5rem]">
+            <slot />
+          </main>
+          <Footer />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
