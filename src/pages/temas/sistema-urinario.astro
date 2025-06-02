@@ -1,0 +1,21 @@
+---
+import PageLayout from "@/layouts/BaseTemas.astro";
+---
+
+<PageLayout meta={{ title: "Sistema Urinario" }}>
+  <h1>Instrucciones</h1>
+  <p class="mb-9">
+    Para navegar por el sistema urinario, utiliza el mouse o el touchpad para
+    hacer zoom y desplazarte por la imagen. <span class="font-bold"
+      >Haz click en las etiquetas para obtener más información</span
+    >
+  </p>
+  <iframe
+    id="embedded-human"
+    frameBorder="0"
+    style="aspect-ratio: 16 / 9; width: 100%"
+    allowFullScreen="true"
+    loading="lazy"
+    src="https://human.biodigital.com/viewer/?id=6B90&ui-anatomy-descriptions=false&ui-anatomy-pronunciations=false&ui-anatomy-labels=true&ui-audio=true&ui-chapter-list=false&ui-fullscreen=true&ui-help=false&ui-info=true&ui-label-list=false&ui-layers=false&ui-skin-layers=false&ui-loader=circle&ui-media-controls=full&ui-menu=true&ui-nav=true&ui-search=false&ui-tools=false&ui-tutorial=false&ui-undo=true&ui-whiteboard=true&initial.none=true&disable-scroll=false&uaid=M4N5P&lang=es&paid=o_396b47b2"
+  ></iframe>
+</PageLayout>
